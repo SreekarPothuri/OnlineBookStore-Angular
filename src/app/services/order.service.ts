@@ -9,8 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class OrderService {
 
-  private getUrl: string = "http://18.219.128.158:8080/order/";
-  private getUrlCustomer: string = "http://18.219.128.158:8080/cart/";
+  private getUrl: string = "http://ec2-18-216-112-230.us-east-2.compute.amazonaws.com:8080/order/";
+  private getUrlCustomer: string = "http://ec2-18-216-112-230.us-east-2.compute.amazonaws.com:8080/cart/";
 
   headersRequest: any;
 

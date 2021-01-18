@@ -12,7 +12,7 @@ import { ResetPassword } from '../models/resetPassword.model';
   providedIn: 'root'
 })
 export class UserService {
-  private getUrl: string = "http://18.219.128.158:8080/user/";
+  private getUrl: string = "http://ec2-18-216-112-230.us-east-2.compute.amazonaws.com:8080/user/";
 
   constructor(private httpClient: HttpClient) { }
 
