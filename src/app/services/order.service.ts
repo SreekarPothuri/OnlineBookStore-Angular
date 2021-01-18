@@ -35,4 +35,8 @@ export class OrderService {
   getRemoveAllBooksFromCart(): Observable<any> {
     return this.httpClient.delete<any>(`${this.getUrlCustomer}all`, { headers: this.headers });
   }
+
+  getRemoveAllOrders(): Observable<any> {
+    return this.httpClient.delete<any>(`${this.getUrl}deleteAll`, { headers: this.headers });
+  }
 }

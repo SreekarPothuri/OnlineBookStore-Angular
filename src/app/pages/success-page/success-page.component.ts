@@ -25,6 +25,7 @@ export class SuccessPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllBooksFromCart();
+    this.getAllOrders();
     this.sharedData.currentMessage.subscribe(i => { this.orderId = i });
   }
 
@@ -32,6 +33,20 @@ export class SuccessPageComponent implements OnInit {
   
   getAllBooksFromCart() {
     this.orderService.getRemoveAllBooksFromCart().subscribe(response => {
+      if (response.statusCode == 200) {
+        this.toastr.success(response.message);
+      }
+    }, error => {
+      var response = error.error;
+      if (response.statusCode != 200) {
+        this.toastr.error(response.message);
+      }
+    })
+  }
+
+  //delete All Orders
+  getAllOrders() {
+    this.orderService.getRemoveAllOrders().subscribe(response => {
       if (response.statusCode == 200) {
         this.toastr.success(response.message);
       }
